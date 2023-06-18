@@ -14,7 +14,7 @@ description = "A library for integration-testing against docker containers from 
 async-trait = { version = "0.1", optional = true }
 bollard = { version = "0.14.0", optional = true }
 bollard-stubs = "=1.42.0-rc.7"
-conquer-once = { version = "0.3", optional = true }
+conquer-once = { version = "0.4", optional = true }
 futures = "0.3"
 hex = "0.4"
 hmac = "0.12"
@@ -32,7 +32,7 @@ watchdog = [ "signal-hook", "conquer-once" ]
 experimental = [ "async-trait", "bollard", "tokio" ]
 
 [dev-dependencies]
-pretty_env_logger = "0.4"
+pretty_env_logger = "0.5"
 reqwest = { version = "0.11.14", features = [ "blocking" ] }
 spectral = "0.6.0"
 testimages = { path = "../testimages" }
