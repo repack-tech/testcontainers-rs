@@ -46,8 +46,7 @@ impl Cli {
         let output = command.output().expect("Failed to execute docker command");
 
         if !output.status.success() {
-            log::error!("failed to start container.\n  container stdout: {}\n  container stderr: {}\n", String::from_utf8_lossy(&output.stdout), String::from_utf8_lossy(&output.stderr));
-            panic!("failed to start container, check logs for details")
+            panic!("failed to start container.\n  container stdout: {}\n  container stderr: {}\n", String::from_utf8_lossy(&output.stdout), String::from_utf8_lossy(&output.stderr))
         }
         let container_id = String::from_utf8(output.stdout)
             .expect("output is not valid utf8")
