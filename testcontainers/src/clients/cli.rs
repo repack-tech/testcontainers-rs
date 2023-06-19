@@ -46,7 +46,7 @@ impl Cli {
         let output = command.output().expect("Failed to execute docker command");
 
         if !output.status.success() {
-            log::error!("failed to start container.\n  container stdout: {}\n  container stderr: {}\n");
+            log::error!("failed to start container.\n  container stdout: {}\n  container stderr: {}\n", output.stdout, output.stderr);
             panic!("failed to start container, check logs for details")
         }
         let container_id = String::from_utf8(output.stdout)
